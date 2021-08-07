@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751462243354",
+    "project_id": "js-mall",
+    "storage_bucket": "js-mall.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751462243354:android:36356534fb1403065885a3",
+        "android_client_info": {
+          "package_name": "com.example.jsmall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751462243354-v1e9e6j608pijdod4altr7k7nc8an91k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6-sSw_Ea2fLqoOyt_7vosapF66URpLK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751462243354-v1e9e6j608pijdod4altr7k7nc8an91k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

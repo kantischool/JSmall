@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signinlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+        <TextView
+            android:id="@+id/stosignin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:text="Click here"
+            android:textColor="#FF0000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViews"
+            app:layout_constraintTop_toBottomOf="@+id/saccbtn" />
+
+        <TextView
+            android:id="@+id/textViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:text="Don't have an Account?"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saccbtn" />
+
+        <Button
+            android:id="@+id/saccbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:backgroundTint="#40000000"
+            android:textColor="#ffffff"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/scpass"
+            app:layout_constraintStart_toStartOf="@+id/scpass"
+            app:layout_constraintTop_toBottomOf="@+id/scpass" />
+
+
+        <EditText
+            android:id="@+id/scpass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/black"
+            android:hint="Password"
+            app:layout_constraintEnd_toEndOf="@+id/semail"
+            app:layout_constraintStart_toStartOf="@+id/semail"
+            app:layout_constraintTop_toBottomOf="@+id/semail" />
+
+        <EditText
+            android:id="@+id/semail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/black"
+            android:hint="Email Id"
+            app:layout_constraintEnd_toEndOf="@+id/slogo"
+            app:layout_constraintStart_toStartOf="@+id/slogo"
+            app:layout_constraintTop_toBottomOf="@+id/slogo" />
+
+        <ImageView
+            android:id="@+id/slogo"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/jsmallnobacks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.63"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/scancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/can"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
