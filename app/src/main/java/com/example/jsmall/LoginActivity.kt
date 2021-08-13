@@ -33,6 +33,12 @@ private lateinit var mauth : FirebaseAuth
             signinlayout.visibility = View.VISIBLE
             scroll.visibility = View.GONE
         }
+        rcancle.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        scancle.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
         saccbtn.setOnClickListener {
             val email = semail.text.toString().trim()
             val pass = scpass.text.toString().trim()
@@ -42,6 +48,7 @@ private lateinit var mauth : FirebaseAuth
             else{
                 val authViewModel = ViewModelProvider(this, AuthViewModelFactory(this,this, mauth)).get(AuthViewModel::class.java)
                 authViewModel.loginUser( email, pass)
+                saccbtn.isEnabled = false
             }
 
         }
@@ -57,6 +64,7 @@ private lateinit var mauth : FirebaseAuth
             else{
                 val authViewModel = ViewModelProvider(this, AuthViewModelFactory(this, this, mauth)).get(AuthViewModel::class.java)
                 authViewModel.registerUser(remail, rpass)
+                raccbtn.isEnabled = false
             }
         }
     }
