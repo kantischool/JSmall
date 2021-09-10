@@ -12,9 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 
-class AuthRepository(private val context: Context, private val mauth : FirebaseAuth ){
+class AuthRepository(private val context: Context, private val mauth : FirebaseAuth, private val activity: Activity ){
 
-    fun registerUser( activity: Activity, email : String,  pass : String){
+    fun registerUser(email : String,  pass : String){
         mauth.createUserWithEmailAndPassword(email,pass)
             .addOnCompleteListener {
                 if(it.isSuccessful){
@@ -29,7 +29,7 @@ class AuthRepository(private val context: Context, private val mauth : FirebaseA
             }
 
     }
-    fun loginUser(  activity: Activity, email : String,  pass : String){
+    fun loginUser(email : String,  pass : String){
         mauth.signInWithEmailAndPassword(email,pass)
             .addOnCompleteListener {
                 if(it.isSuccessful){
@@ -47,6 +47,20 @@ class AuthRepository(private val context: Context, private val mauth : FirebaseA
     }
     fun logOut(){
         mauth.signOut()
+    }
+    fun forgotPassword(email :String){
+        mauth.sendPasswordResetEmail(email)
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    Toast.makeText(context, "Email is sent to your email check your mail box", Toast.LENGTH_LONG).show()
+                    activity.changpass.isEnabled = true
+                }
+                else{
+                    Toast.makeText(context, it.exception!!.message, Toast.LENGTH_LONG).show()
+                    activity.changpass.isEnabled = true
+                }
+            }
+
     }
 }
 

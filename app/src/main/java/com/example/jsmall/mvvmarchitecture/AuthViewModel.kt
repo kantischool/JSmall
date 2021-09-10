@@ -8,14 +8,17 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AuthViewModel(private val activity: Activity, context: Context, private val mauth : FirebaseAuth) : ViewModel() {
 
-    private val authRepo = AuthRepository(context,mauth)
+    private val authRepo = AuthRepository(context,mauth, activity)
     fun registerUser(email : String, pass : String){
-        authRepo.registerUser(activity, email, pass)
+        authRepo.registerUser(email, pass)
     }
     fun loginUser(email : String, pass : String){
-        authRepo.loginUser(activity, email, pass)
+        authRepo.loginUser(email, pass)
     }
     fun logOut(){
         authRepo.logOut()
+    }
+    fun forgotPassword(email: String){
+        authRepo.forgotPassword(email)
     }
 }

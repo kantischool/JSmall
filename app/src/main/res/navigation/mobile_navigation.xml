@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/jsmall">
+
+    <fragment
+        android:id="@+id/jsmall"
+        android:name="com.example.jsmall.ui.jsmall.JsMallFragment"
+        android:label="Js Mall"
+        tools:layout="@layout/jsmall_fragment" />
+
+    <fragment
+        android:id="@+id/myorder"
+        android:name="com.example.jsmall.ui.myorders.MyOrdersFragment"
+        android:label="My Orders"
+        tools:layout="@layout/myorder_fragment" />
+
+    <fragment
+        android:id="@+id/favourite"
+        android:name="com.example.jsmall.ui.favourite.FavouriteFragment"
+        android:label="Favourite Item"
+        tools:layout="@layout/favourite_fragment" />
+    <fragment
+        android:id="@+id/account"
+        android:name="com.example.jsmall.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/account_fragment" />
+    <fragment
+        android:id="@+id/addtocart"
+        android:name="com.example.jsmall.ui.addtocart.AddToCartFragment"
+        android:label="Add to Cart"
+        tools:layout="@layout/add_to_cart_fragment" />
+    <fragment
+        android:id="@+id/mygift"
+        android:name="com.example.jsmall.ui.mygift.MyGiftFragment"
+        android:label="My Gift"
+        tools:layout="@layout/my_gift_fragment" />
+</navigation>

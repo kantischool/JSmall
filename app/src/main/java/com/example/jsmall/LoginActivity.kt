@@ -18,11 +18,13 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
 private lateinit var mauth : FirebaseAuth
+    private lateinit var authViewModel: AuthViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
          mauth = FirebaseAuth.getInstance()
+         authViewModel = ViewModelProvider(this, AuthViewModelFactory(this,this, mauth)).get(AuthViewModel::class.java)
 
         stosignin.setOnClickListener {
            signinlayout.visibility = View.GONE
@@ -34,10 +36,19 @@ private lateinit var mauth : FirebaseAuth
             scroll.visibility = View.GONE
         }
         rcancle.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MainActivityAgain::class.java))
         }
         scancle.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MainActivityAgain::class.java))
+        }
+        forgotpass.setOnClickListener {
+            forpasslayout.visibility = View.VISIBLE
+            signinlayout.visibility = View.GONE
+        }
+
+        backto.setOnClickListener {
+            forpasslayout.visibility = View.GONE
+            signinlayout.visibility = View.VISIBLE
         }
         saccbtn.setOnClickListener {
             val email = semail.text.toString().trim()
@@ -46,7 +57,6 @@ private lateinit var mauth : FirebaseAuth
                 toast("Enter Valid Data")
             }
             else{
-                val authViewModel = ViewModelProvider(this, AuthViewModelFactory(this,this, mauth)).get(AuthViewModel::class.java)
                 authViewModel.loginUser( email, pass)
                 saccbtn.isEnabled = false
             }
@@ -62,9 +72,20 @@ private lateinit var mauth : FirebaseAuth
                 toast("Enter All Data \n OR Enter Valid Data")
             }
             else{
-                val authViewModel = ViewModelProvider(this, AuthViewModelFactory(this, this, mauth)).get(AuthViewModel::class.java)
                 authViewModel.registerUser(remail, rpass)
                 raccbtn.isEnabled = false
+            }
+        }
+
+        changpass.setOnClickListener {
+            val femail = forgotemail.text.toString()
+            if (femail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(femail).matches()){
+
+                forgotemail.error = "Enter valid Email"
+            }
+            else{
+                authViewModel.forgotPassword(femail)
+                changpass.isEnabled = false
             }
         }
     }
@@ -72,7 +93,7 @@ private lateinit var mauth : FirebaseAuth
     override fun onStart() {
         super.onStart()
         if(mauth.currentUser != null){
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this,MainActivityAgain::class.java))
             finish()
         }
     }

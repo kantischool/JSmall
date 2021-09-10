@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/jsmall"
+            android:icon="@mipmap/shoppingbag"
+            android:title="JS Mall" />
+        <item
+            android:id="@+id/myorder"
+            android:icon="@mipmap/shoppingbag"
+            android:title="My Orders" />
+        <item
+            android:id="@+id/favourite"
+            android:icon="@mipmap/bookmark"
+            android:title="Favourite Item" />
+        <item
+            android:id="@+id/addtocart"
+            android:icon="@mipmap/shoppingcartjs"
+            android:title="Add to Cart" />
+        <item
+            android:id="@+id/mygift"
+            android:icon="@mipmap/trophy"
+            android:title="My Gift" />
+        <item
+            android:id="@+id/account"
+            android:icon="@mipmap/account"
+            android:title="Account" />
+    </group>
+</menu>
