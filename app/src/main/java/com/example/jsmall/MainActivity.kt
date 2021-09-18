@@ -20,6 +20,8 @@ import com.example.jsmall.mvvmarchitecture.DataViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
+//testing for branch
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var dataViewModel : DataViewModel
