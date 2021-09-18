@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 //testing for branch
+// testing part 2
 
 class MainActivity : AppCompatActivity() {
 
